@@ -1,59 +1,66 @@
 # 📚 Lectomate — AI-Powered Study Assistant
 
-> An AI-powered study assistant that helps students learn smarter by transforming their study documents into **notes, flashcards, quizzes, and an interactive AI tutor**.
+Lectomate is an AI-powered study assistant that helps students learn smarter by converting study documents into **notes, flashcards, quizzes, and an interactive AI tutor**.
 
 ## 🌐 Live Demo
 
-**Live Website:**  
-https://lecto-mate-ai-powered-study-partner.vercel.app/
+🔗 https://lecto-mate-ai-powered-study-partner.vercel.app/
 
 ---
 
 ## ✨ Features
 
-- 📄 **Document Upload** — Upload PDF, DOCX, and TXT study materials
-- 📝 **AI-Generated Notes** — Generate structured summaries from uploaded documents
-- 🧠 **Flashcards** — Automatically generate flashcards for effective revision
-- ❓ **AI Quizzes** — Generate multiple-choice and true/false questions with explanations
-- 🤖 **AI Tutor Chatbot** — Ask questions and interact with an AI tutor based on your documents
-- 📖 **Document Context** — Chat with the AI using the content of your uploaded documents
-- 👤 **Student Profile** — Manage profile, avatar, account settings, and learning progress
-- 📊 **Progress Tracking** — Track learning and revision progress
-- 🔗 **Client-Side Routing** — Every page has its own unique URL
+- 📄 Upload PDF, DOCX, and TXT documents
+- 📝 Generate AI-powered study notes
+- 🧠 Generate flashcards for revision
+- ❓ Generate quizzes with explanations
+- 🤖 Chat with an AI tutor based on uploaded documents
+- 👤 Student profile and progress tracking
+- 🔗 Client-side routing with unique URLs
+- 📚 Document-based personalized learning
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technologies |
+| Layer | Technology |
 |---|---|
-| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS, React Router v6 |
-| **Backend** | Node.js, Express.js |
-| **Database** | MongoDB, Mongoose |
-| **AI** | Google Gemini 1.5 Flash |
-| **Authentication** | JWT, bcryptjs |
-| **Deployment** | Vercel, Render |
-| **Database Hosting** | MongoDB Atlas |
+| Frontend | React, TypeScript, Vite |
+| Backend | Node.js, Express.js |
+| Database | MongoDB, Mongoose |
+| AI | Google Gemini |
+| Authentication | JWT, bcryptjs |
+| Deployment | Vercel, Render |
+| Database Hosting | MongoDB Atlas |
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ System Architecture
 
 ```text
-┌─────────────────────┐
-│       Vercel        │
-│   React Frontend    │
-└──────────┬──────────┘
-           │
-           │ HTTPS
-           ▼
-┌─────────────────────┐
-│       Render        │
-│   Express Backend   │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│   MongoDB Atlas     │
-│     M0 Cluster      │
-└─────────────────────┘
+                    ┌──────────────────────┐
+                    │       Student        │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │   React Frontend     │
+                    │ React + TypeScript   │
+                    │ + Vite               │
+                    └──────────┬───────────┘
+                               │
+                         HTTPS / REST API
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │   Express Backend    │
+                    │      Node.js         │
+                    └──────────┬───────────┘
+                               │
+                ┌──────────────┼──────────────┐
+                │              │              │
+                ▼              ▼              ▼
+       ┌──────────────┐ ┌─────────────┐ ┌──────────────┐
+       │ Google Gemini│ │  MongoDB    │ │ JWT / bcrypt │
+       │     AI       │ │    Atlas    │ │ Authentication│
+       └──────────────┘ └─────────────┘ └──────────────┘
